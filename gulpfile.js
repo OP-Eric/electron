@@ -76,7 +76,9 @@ gulp.task('js:dist', function () {
     .pipe(uglify())
     .pipe(gulp.dest(paths.dist));
 });
+
 gulp.task('copy:dist', ['html:dist', 'css:dist', 'js:dist']);
+
 gulp.task('inject:dist', ['copy:dist'], function () {
   var css = gulp.src(paths.distCSS);
   var js = gulp.src(paths.distJS);
@@ -85,6 +87,7 @@ gulp.task('inject:dist', ['copy:dist'], function () {
     .pipe(inject( js, { relative:true } ))
     .pipe(gulp.dest(paths.dist));
 });
+
 gulp.task('build', ['inject:dist']);
 
 gulp.task('clean', function () {
