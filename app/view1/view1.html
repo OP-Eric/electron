@@ -1,1 +1,16 @@
-<p>This is the partial for view 1.</p>
+<script>
+  $(document).ready(function () {
+    $('#summernote').summernote();
+  });
+  var html = $('#summernote').summernote('code');
+  $('.results').html(html);
+
+</script>
+<div class="row">
+  <div class="col-md-6">
+    <div id="summernote">Hello Summernote</div>
+  </div>
+  <div class="col-md-6">
+    <div class="results"></div>
+  </div>
+</div>
